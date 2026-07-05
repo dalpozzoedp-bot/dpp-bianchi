@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Product Passport — Bianchi T-Tronik C-Type</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/quindi-mark.png" type="image/png">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-container">
+    <img src="assets/quindi-logo-white.png" alt="quindi" class="logo">
+    <div class="header-text">
+      <h1>Bianchi T-Tronik C-Type</h1>
+      <p class="tagline">Digital Product Passport</p>
+    </div>
+    <!-- Hamburger Menu Button -->
+    <button class="menu-hamburger" id="menu-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <nav class="menu-items" id="menu-items">
+    <a href="home.html">Home</a>
+    <a href="identificazione.html">Identificazione e anagrafica</a>
+    <a href="sostenibilita.html">Sostenibilità e impatto ambientale</a>
+    <a href="circolarita.html">Circolarità e fine vita</a>
+    <a href="governance.html">Governance e standard</a>
+    <a href="come-leggere.html">Come leggere</a>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="section home-section">
+    <div class="home-content">
+      <!-- Immagine della bicicletta -->
+      <div class="home-image">
+        <img src="assets/bianchi-tronik.webp" alt="Bianchi T-Tronik C-Type">
+      </div>
+
+      <!-- Testo introduttivo -->
+      <div class="home-intro">
+        <h3 style="margin-bottom: 1rem; color: var(--color-primary-dark);">Digital Product Passport</h3>
+        <p>
+          Questo sito è un prototipo dimostrativo (Proof of Concept) di Digital Product Passport (DPP) applicato a una bicicletta Bianchi T-Tronik C-Type. Il DPP è un registro digitale che accompagna il prodotto lungo tutto il suo ciclo di vita: basta scansionare il QR code sul telaio per accedere a materiali, componenti e fornitori, impronta ambientale e istruzioni per l'uso, la riparazione e il corretto smaltimento a fine vita. L'obiettivo è mostrare, in modo concreto, come un solo codice possa rendere trasparenti e accessibili informazioni oggi disperse, rispondendo agli obblighi introdotti dal Regolamento europeo ESPR.
+        </p>
+      </div>
+
+      <!-- Esplora le sezioni -->
+      <div class="home-cta">
+        <p style="margin-top: 2rem; font-size: 0.95rem; color: var(--color-text-secondary); text-align: center;">
+          <strong>Esplora le sezioni del passaporto digitale usando il menu.</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Come leggere il DPP Section -->
+  <section class="section">
+    <div class="collapsible-section">
+      <button class="collapsible-header" onclick="toggleCollapsible(this)">
+        <span class="collapsible-title">
+          <h3 style="margin: 0; font-size: 1rem;">Come leggere il DPP</h3>
+        </span>
+        <span class="collapsible-arrow">▼</span>
+      </button>
+      <div class="collapsible-content">
+        <div class="final-notes" style="background-color: transparent; border-radius: 0; padding: 0; margin-top: 0;">
+          <div class="notes-grid">
+            <div class="note-item">
+              <span class="badge badge-reale">Reale</span>
+              <p>Dati verificabili da schede tecniche, fornitori ufficiali e documenti normativi.</p>
+            </div>
+            <div class="note-item">
+              <span class="badge badge-stima">Stima</span>
+              <p>Valori simulati per questo Proof of Concept. Nel DPP reale saranno popolati da quindi.ai con dati verificati da terza parte.</p>
+            </div>
+          </div>
+          <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #6B7280; line-height: 1.6; position: relative;">
+            <strong>Disclaimer:</strong> Questo Digital Product Passport è un Proof of Concept sviluppato per dimostrare come l'infrastruttura quindi.ai abilita la conformità ai regolamenti ESPR e Batterie, e offre trasparenza sul ciclo di vita dei prodotti. I dati marcati come STIMA sono valori esemplificativi. Per il documento definitivo, i dati saranno certificati dalla fabbrica, verificati da terzi e sottoposti a governance rigorosa.
+
+            <!-- Easter Egg 🥚 -->
+            <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" style="position: absolute; bottom: -35px; right: -10px; width: 45px; height: 54px; opacity: 0.15; transition: opacity 0.3s ease;">
+              <defs>
+                <style>
+                  .egg-face { fill: none; stroke: #111111; stroke-width: 1.5; }
+                  .egg-feature { fill: #111111; }
+                </style>
+              </defs>
+              <ellipse cx="50" cy="45" rx="35" ry="40" class="egg-face"/>
+              <ellipse cx="35" cy="40" rx="5" ry="7" class="egg-feature"/>
+              <ellipse cx="65" cy="40" rx="5" ry="7" class="egg-feature"/>
+              <path d="M 25 32 Q 35 28 45 32" class="egg-face"/>
+              <path d="M 55 32 Q 65 28 75 32" class="egg-face"/>
+              <line x1="50" y1="45" x2="50" y2="55" class="egg-face"/>
+              <path d="M 35 65 Q 50 72 65 65" class="egg-face"/>
+              <rect x="48" y="65" width="4" height="3" class="egg-feature"/>
+              <ellipse cx="15" cy="50" rx="6" ry="12" class="egg-face"/>
+              <path d="M 20 15 Q 50 5 80 15 Q 85 20 80 25 Q 50 20 20 25" class="egg-face"/>
+            </svg>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next Page Navigation -->
+  <div class="page-navigation">
+    <a href="identificazione.html" class="next-page-button">
+      <span class="next-arrow">→</span>
+      <span class="next-text">Prossima pagina: Identificazione e anagrafica</span>
+    </a>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-content">
+    <p><strong>Digital Product Passport</strong> — Bianchi T-Tronik C-Type</p>
+    <p style="font-size: 0.85rem; margin-top: 0.5rem;">Powered by <strong>quindi.ai</strong> | Conforme a ESPR (UE) 2024/1781, GS1 Digital Link, PEF/LCA</p>
+  </div>
+</footer>
+
+<!-- Menu Toggle Script -->
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const menuItems = document.getElementById('menu-items');
+  const menuLinks = document.querySelectorAll('.menu-items a');
+
+  // Toggle menu quando clicchi l'hamburger
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    menuItems.classList.toggle('menu-open');
+  });
+
+  // Chiudi menu quando clicchi su un link
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.classList.remove('active');
+      menuItems.classList.remove('menu-open');
+    });
+  });
+
+  // Chiudi menu quando clicchi fuori dal menu
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.header') && menuItems.classList.contains('menu-open')) {
+      menuToggle.classList.remove('active');
+      menuItems.classList.remove('menu-open');
+    }
+  });
+
+  function toggleCollapsible(button) {
+    button.classList.toggle('active');
+    const content = button.nextElementSibling;
+    content.classList.toggle('active');
+  }
+</script>
+
+</body>
+</html>

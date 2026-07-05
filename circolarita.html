@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circolarità e fine vita — Digital Product Passport</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/quindi-mark.png" type="image/png">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-container">
+    <img src="assets/quindi-logo-white.png" alt="quindi" class="logo">
+    <div class="header-text">
+      <h1>Bianchi T-Tronik C-Type</h1>
+      <p class="tagline">Digital Product Passport</p>
+    </div>
+    <button class="menu-hamburger" id="menu-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <nav class="menu-items" id="menu-items">
+    <a href="home.html">Home</a>
+    <a href="identificazione.html">Identificazione e anagrafica</a>
+    <a href="sostenibilita.html">Sostenibilità e impatto ambientale</a>
+    <a href="circolarita.html">Circolarità e fine vita</a>
+    <a href="governance.html">Governance e standard</a>
+  </nav>
+</header>
+
+<main class="container">
+  <!-- SEZIONE 3: CIRCOLARITÀ E FINE VITA -->
+  <section id="circolarita" class="section">
+    <h2>Circolarità e fine vita</h2>
+
+    <div class="subsection">
+      <h3>Istruzioni di utilizzo e manutenzione</h3>
+      <div class="links-grid">
+        <a href="https://www.shimano-steps.com/e-bikes/europe/en/product-information/city-trekking/e6100" target="_blank" class="link-button">
+          <span class="link-title">Sistema Shimano STEPS E6100</span>
+          <span class="link-desc">Uso, ricarica, display</span>
+        </a>
+        <a href="https://bike.shimano.com/support-and-service/faq/STP0A.html" target="_blank" class="link-button">
+          <span class="link-title">FAQ Shimano</span>
+          <span class="link-desc">Manutenzione batteria e motore</span>
+        </a>
+        <a href="https://www.sram.com/en/service/manuals--documents" target="_blank" class="link-button">
+          <span class="link-title">Manuali SRAM</span>
+          <span class="link-desc">Service trasmissione</span>
+        </a>
+        <a href="https://www.srsuntour.com/support/product-support/owners-manuals/" target="_blank" class="link-button">
+          <span class="link-title">Manuale SR Suntour NEX</span>
+          <span class="link-desc">Forcella e ammortizzatori</span>
+        </a>
+        <a href="https://www.bianchi.com/it/t-tronik-c-type/" target="_blank" class="link-button">
+          <span class="link-title">Pagina modello Bianchi</span>
+          <span class="link-desc">Specifiche e supporto ufficiale</span>
+        </a>
+      </div>
+
+      <div class="usage-tip">
+        <h4>Consiglio per prolungare la vita della batteria</h4>
+        <p>Per prolungare la vita della batteria Shimano E6100, conservarla a ~70% di carica se inutilizzata a lungo ed evitare ricariche ripetute tra 80% e 100%. Dopo 1.000 cicli di ricarica la cella mantiene circa il 60% della capacità originaria (dato utile per lo stato di salute nel Battery Passport).</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Smontabilità (Design for Disassembly)</h3>
+
+      <!-- Indicatori di Conformità DfD -->
+      <div class="dfd-compliance">
+        <h4>Indicatori di Conformità DfD (Requisiti Green Claims / ESPR)</h4>
+
+        <div class="compliance-items">
+          <div class="compliance-item">
+            <h5>Regola dei 3 Utensili</h5>
+            <p>L'85% dei componenti sensibili si smonta con soli 3 attrezzi standard (Brugola 4 mm, Brugola 5 mm, Chiave 15 mm). Zero attrezzature proprietarie.</p>
+          </div>
+
+          <div class="compliance-item">
+            <h5>Connessioni 100% Reversibili</h5>
+            <p>Totale assenza di giunzioni irreversibili (no colle strutturali, no rivetti, no saldature chimiche).</p>
+          </div>
+
+          <div class="compliance-item">
+            <h5>Purezza del Materiale</h5>
+            <p>Il telaio in Alluminio 6061 è privo di contaminanti co-stampati, garantendo un riciclo metallurgico pulito al 99%.</p>
+          </div>
+
+          <div class="compliance-item">
+            <h5>Verniciatura Ecocompatibile</h5>
+            <p>Verniciatura a polvere termicamente degradabile in fase di fusione, senza rilascio di alogeni.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sequenza operativa di smontaggio -->
+      <div class="collapsible-section" style="margin-top: 2rem;">
+        <button class="collapsible-header" onclick="toggleCollapsible(this)">
+          <span class="collapsible-title">
+            <span style="font-size: 1.05rem; font-weight: 700; color: #111111;">Sequenza operativa di smontaggio</span>
+          </span>
+          <span class="collapsible-arrow">▼</span>
+        </button>
+        <div class="collapsible-content">
+          <div class="disassembly-sequence">
+        <!-- Step 1: Batteria -->
+        <div class="disassembly-step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h5>Batteria Phylion (Tubo obliquo)</h5>
+            <div class="step-detail">
+              <p><strong>Fissaggio:</strong> Meccanismo a sgancio rapido con chiave</p>
+              <p><strong>Utensili:</strong> Nessuno (Tool-less)</p>
+              <p><strong>Tempo:</strong> &lt; 10 secondi</p>
+              <p><strong>Destinazione EoL:</strong> Riciclo Pile e Accumulatori (Dir. UE 2023/1542)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Motore -->
+        <div class="disassembly-step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h5>Motore Centrale (Shimano)</h5>
+            <div class="step-detail">
+              <p><strong>Fissaggio:</strong> 3 perni passanti standard su culla movimento centrale</p>
+              <p><strong>Utensili:</strong> Chiave esagonale (Brugola) 5 mm</p>
+              <p><strong>Tempo:</strong> ~ 4 minuti</p>
+              <p><strong>Destinazione EoL:</strong> Flusso RAEE R4 (Elettronica/Motori)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Display & Cablaggio -->
+        <div class="disassembly-step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h5>Display &amp; Cablaggio (E-TUBE)</h5>
+            <div class="step-detail">
+              <p><strong>Fissaggio:</strong> Connettori plug-and-play impermeabili a trazione guidata</p>
+              <p><strong>Utensili:</strong> Estrattore Shimano dedicato o pinza a becco</p>
+              <p><strong>Tempo:</strong> ~ 3 minuti</p>
+              <p><strong>Destinazione EoL:</strong> Flusso RAEE R4 (Piccoli elettrodomestici/cavi)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4: Componenti Meccanici -->
+        <div class="disassembly-step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h5>Componenti Meccanici (Ruote, Freni, Forcella, Cambio)</h5>
+            <div class="step-detail">
+              <p><strong>Fissaggio:</strong> Bulloneria, dadi mozzo e attacchi IS/PostMount standard</p>
+              <p><strong>Utensili:</strong> Brugole (4/5/6 mm), Chiave inglese (15 mm)</p>
+              <p><strong>Tempo:</strong> ~ 10 minuti</p>
+              <p><strong>Destinazione EoL:</strong> Frazione Metallica Mista (Acciaio/Alluminio)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 5: Telaio -->
+        <div class="disassembly-step">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h5>Telaio Nudo</h5>
+            <div class="step-detail">
+              <p><strong>Stato:</strong> Alluminio PG 6061 monomaterico (senza inserti plastici o compositi)</p>
+              <p><strong>Utensili:</strong> Nessuno (Fase finale)</p>
+              <p><strong>Destinazione EoL:</strong> Riciclo Alluminio Dedicato (Fonderia secondaria ad alta purezza)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #6B7280; line-height: 1.6; border-top: 1px solid var(--color-border); padding-top: 1rem;">
+        <strong>Tempo totale di smontaggio completo:</strong> ~27 minuti (senza esperienza). Il design modulare e tool-less consente una rapida separazione dei flussi di riciclo, massimizzando il recupero di valore e minimizzando i costi di trattamento secondo la Dir. UE 2012/19/UE (RAEE).
+      </p>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Riciclabilità e smaltimento per componente</h3>
+      <div class="recycling-list">
+        <div class="recycling-item">
+          <h4>Batteria Li-ion</h4>
+          <p><strong>Flusso:</strong> Raccolta batterie dedicata<br><strong>Norma:</strong> Reg. UE 2023/1542 — no indifferenziato</p>
+        </div>
+        <div class="recycling-item">
+          <h4>Motore / display / cablaggio</h4>
+          <p><strong>Flusso:</strong> RAEE (elettronica)<br><strong>Norma:</strong> Dir. RAEE 2012/19/UE</p>
+        </div>
+        <div class="recycling-item">
+          <h4>Telaio alluminio</h4>
+          <p><strong>Flusso:</strong> Riciclo metalli<br><strong>Riciclabilità:</strong> ~100%</p>
+        </div>
+        <div class="recycling-item">
+          <h4>Acciaio (catena, dischi, minuteria)</h4>
+          <p><strong>Flusso:</strong> Riciclo metalli<br><strong>Riciclabilità:</strong> ~100%</p>
+        </div>
+        <div class="recycling-item">
+          <h4>Pneumatici / camere d'aria</h4>
+          <p><strong>Flusso:</strong> Riciclo gomma<br><strong>Filiera:</strong> dedicata gomma <span class="badge badge-stima">Stima</span></p>
+        </div>
+        <div class="recycling-item">
+          <h4>Sella / plastiche</h4>
+          <p><strong>Flusso:</strong> Recupero plastiche<br><strong>Note:</strong> Da verificare per materiale <span class="badge badge-stima">Stima</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="battery-passport">
+        <h3>🔋 Battery Passport</h3>
+        <p class="battery-intro">Essendo una e-bike, la batteria attiva il <strong>Battery Passport</strong>, obbligatorio dal 18 febbraio 2027 per le batterie LMT (Reg. UE 2023/1542). È il primo pilastro del DPP, non una normativa separata: lo stesso QR sul telaio dà accesso anche a questi dati.</p>
+
+        <div class="battery-specs">
+          <div class="battery-spec">
+            <h4>Capacità nominale</h4>
+            <p>417 Wh (36V)</p>
+          </div>
+          <div class="battery-spec">
+            <h4>Stato di salute (SoH)</h4>
+            <p>~60% dopo 1.000 cicli</p>
+          </div>
+          <div class="battery-spec">
+            <h4>N° cicli di carica</h4>
+            <p>Contatore da sistema (E-TUBE) <span class="badge badge-stima">Stima</span></p>
+          </div>
+          <div class="battery-spec">
+            <h4>Composizione celle</h4>
+            <p>Li-ion NMC (litio, nichel, cobalto, grafite) <span class="badge badge-stima">Stima</span></p>
+          </div>
+          <div class="battery-spec">
+            <h4>Carbon footprint batteria</h4>
+            <p>~55 kg CO₂e (da dichiarare/verificare) <span class="badge badge-stima">Stima</span></p>
+          </div>
+          <div class="battery-spec">
+            <h4>% materiali recuperati</h4>
+            <p>Obbligo dal 2028 (Reg. Batterie)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <p><strong>⚠ Materiali pericolosi:</strong> le celle Li-ion vanno gestite come rifiuto pericoloso; nessun contenuto di mercurio/cadmio/piombo oltre le soglie del Reg. Batterie.</p>
+    </div>
+  </section>
+
+  <!-- Next Page Navigation -->
+  <div class="page-navigation">
+    <a href="sostenibilita.html" class="prev-page-button">
+      <span class="prev-arrow">←</span>
+      <span class="prev-text">Indietro</span>
+    </a>
+    <a href="governance.html" class="next-page-button">
+      <span class="next-arrow">→</span>
+      <span class="next-text">Avanti</span>
+    </a>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-content">
+    <p><strong>Digital Product Passport</strong> — Bianchi T-Tronik C-Type</p>
+    <p style="font-size: 0.85rem; margin-top: 0.5rem;">Powered by <strong>quindi.ai</strong> | Conforme a ESPR (UE) 2024/1781, GS1 Digital Link, PEF/LCA</p>
+  </div>
+</footer>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const menuItems = document.getElementById('menu-items');
+  const menuLinks = document.querySelectorAll('.menu-items a');
+
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    menuItems.classList.toggle('menu-open');
+  });
+
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.classList.remove('active');
+      menuItems.classList.remove('menu-open');
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.header') && menuItems.classList.contains('menu-open')) {
+      menuToggle.classList.remove('active');
+      menuItems.classList.remove('menu-open');
+    }
+  });
+
+  function toggleCollapsible(button) {
+    button.classList.toggle('active');
+    const content = button.nextElementSibling;
+    content.classList.toggle('active');
+  }
+</script>
+
+</body>
+</html>

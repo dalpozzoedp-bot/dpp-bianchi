@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sostenibilità e impatto ambientale — Digital Product Passport</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/quindi-mark.png" type="image/png">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-container">
+    <img src="assets/quindi-logo-white.png" alt="quindi" class="logo">
+    <div class="header-text">
+      <h1>Bianchi T-Tronik C-Type</h1>
+      <p class="tagline">Digital Product Passport</p>
+    </div>
+    <button class="menu-hamburger" id="menu-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <nav class="menu-items" id="menu-items">
+    <a href="home.html">Home</a>
+    <a href="identificazione.html">Identificazione e anagrafica</a>
+    <a href="sostenibilita.html">Sostenibilità e impatto ambientale</a>
+    <a href="circolarita.html">Circolarità e fine vita</a>
+    <a href="governance.html">Governance e standard</a>
+  </nav>
+</header>
+
+<main class="container">
+  <section id="sostenibilita" class="section">
+    <h2>Sostenibilità e impatto ambientale</h2>
+
+    <div class="subsection">
+      <h3>Carbon footprint (LCA)</h3>
+      <div class="carbon-chart-container">
+        <!-- Grafico a barre -->
+        <div class="carbon-graph">
+          <!-- Scala (asse X) -->
+          <div class="carbon-scale">
+            <div class="carbon-scale-label">0</div>
+            <div class="carbon-scale-label">20</div>
+            <div class="carbon-scale-label">40</div>
+            <div class="carbon-scale-label">60</div>
+          </div>
+
+          <!-- Riga Batteria -->
+          <div class="carbon-row">
+            <div class="carbon-label-left">
+              <strong>Batteria</strong>
+              <span class="badge badge-stima">Stima</span>
+            </div>
+            <div class="carbon-bar-wrapper">
+              <div class="carbon-bar" style="width: 91.67%;" data-color="primary">
+                <span class="carbon-value-label">55</span>
+              </div>
+            </div>
+            <div class="carbon-label-right">kg CO₂e</div>
+          </div>
+
+          <!-- Riga Telaio -->
+          <div class="carbon-row">
+            <div class="carbon-label-left">
+              <strong>Telaio alluminio</strong>
+              <span class="badge badge-stima">Stima</span>
+            </div>
+            <div class="carbon-bar-wrapper">
+              <div class="carbon-bar" style="width: 75%;" data-color="dark">
+                <span class="carbon-value-label">45</span>
+              </div>
+            </div>
+            <div class="carbon-label-right">kg CO₂e</div>
+          </div>
+
+          <!-- Riga Motore -->
+          <div class="carbon-row">
+            <div class="carbon-label-left">
+              <strong>Motore + elettronica</strong>
+              <span class="badge badge-stima">Stima</span>
+            </div>
+            <div class="carbon-bar-wrapper">
+              <div class="carbon-bar" style="width: 66.67%;" data-color="primary">
+                <span class="carbon-value-label">40</span>
+              </div>
+            </div>
+            <div class="carbon-label-right">kg CO₂e</div>
+          </div>
+
+          <!-- Riga Componenti -->
+          <div class="carbon-row">
+            <div class="carbon-label-left">
+              <strong>Componenti vari</strong>
+              <span class="badge badge-stima">Stima</span>
+            </div>
+            <div class="carbon-bar-wrapper">
+              <div class="carbon-bar" style="width: 66.67%;" data-color="dark">
+                <span class="carbon-value-label">40</span>
+              </div>
+            </div>
+            <div class="carbon-label-right">kg CO₂e</div>
+          </div>
+        </div>
+
+        <!-- Unità di misura asse X -->
+        <div class="carbon-axis-label">
+          <span></span>
+          <span>(kg CO₂e)</span>
+        </div>
+
+        <!-- Totale e nota -->
+        <div class="carbon-total-box">
+          <div class="carbon-total-header">
+            <h4>Impronta totale (cradle-to-gate)</h4>
+            <span class="badge badge-stima">Stima</span>
+          </div>
+          <div class="carbon-total-value">
+            <span class="total-number">~180</span>
+            <span class="total-unit">kg CO₂e</span>
+          </div>
+          <p class="carbon-total-note"><strong>Nota:</strong> il cradle-to-gate comprende estrazione materie prime, lavorazione, produzione e trasporto fino al magazzino. Non include distribuzione, uso e fine vita.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="note-methodology">
+      <p><strong>Nota metodologica:</strong> i valori di carbon footprint si calcolano con la metodologia europea PEF (Product Environmental Footprint), su base LCA (ISO 14040/44 e 14067), espressi in kg CO₂e. Per la T-Tronik questi dati non sono pubblici: nel PoC sono stime. Servono a mostrare perché è necessaria un'infrastruttura dati (quindi.ai) per popolarli con valori reali e verificati da terza parte.</p>
+    </div>
+
+    <div class="subsection">
+      <h3>Provenienza dei materiali</h3>
+      <ul class="material-list">
+        <li><strong>Alluminio telaio (PG 6061):</strong> percentuale di riciclato ~30% <span class="badge badge-stima">Stima</span> — da certificare con il fornitore del telaio.</li>
+        <li><strong>Acciaio</strong> (catena, minuteria, dischi): riciclabile al 100%, quota di riciclato in ingresso da dichiarare <span class="badge badge-stima">Stima</span>.</li>
+        <li><strong>Celle batteria</strong> (Li-ion NMC): materiali critici — litio, nichel, cobalto, grafite; tracciabilità richiesta dal Reg. Batterie.</li>
+        <li><strong>Certificazioni:</strong> per il ciclo (metallo/gomma) NON si applicano FSC/GOTS (tipiche di legno e tessile); rilevano le dichiarazioni ambientali di prodotto (EPD) e la conformità REACH/RoHS per l'elettronica.</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <h3>Consumo di risorse (produzione)</h3>
+      <div class="specs-grid">
+        <div class="spec-item">
+          <span class="spec-label">Energia di assemblaggio</span>
+          <span class="spec-value">~25 kWh per unità <span class="badge badge-stima">Stima</span></span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Acqua (verniciatura / trattamenti)</span>
+          <span class="spec-value">~120 litri per unità <span class="badge badge-stima">Stima</span></span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Scarti di produzione</span>
+          <span class="spec-value">% da rilevare in linea (dato quindi.ai) <span class="badge badge-stima">Stima</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next Page Navigation -->
+  <div class="page-navigation">
+    <a href="identificazione.html" class="prev-page-button">
+      <span class="prev-arrow">←</span>
+      <span class="prev-text">Indietro</span>
+    </a>
+    <a href="circolarita.html" class="next-page-button">
+      <span class="next-arrow">→</span>
+      <span class="next-text">Avanti</span>
+    </a>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-content">
+    <p><strong>Digital Product Passport</strong> — Bianchi T-Tronik C-Type</p>
+    <p style="font-size: 0.85rem; margin-top: 0.5rem;">Powered by <strong>quindi.ai</strong> | Conforme a ESPR (UE) 2024/1781, GS1 Digital Link, PEF/LCA</p>
+  </div>
+</footer>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const menuItems = document.getElementById('menu-items');
+  const menuLinks = document.querySelectorAll('.menu-items a');
+
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    menuItems.classList.toggle('menu-open');
+  });
+
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.classList.remove('active');
+      menuItems.classList.remove('menu-open');
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.header') && menuItems.classList.contains('menu-open')) {
+      menuToggle.classList.remove('active');
+      menuItems.classList.remove('menu-open');
+    }
+  });
+</script>
+
+</body>
+</html>

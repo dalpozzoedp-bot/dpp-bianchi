@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Identificazione e anagrafica — Digital Product Passport</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/quindi-mark.png" type="image/png">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-container">
+    <img src="assets/quindi-logo-white.png" alt="quindi" class="logo">
+    <div class="header-text">
+      <h1>Bianchi T-Tronik C-Type</h1>
+      <p class="tagline">Digital Product Passport</p>
+    </div>
+    <button class="menu-hamburger" id="menu-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <nav class="menu-items" id="menu-items">
+    <a href="home.html">Home</a>
+    <a href="identificazione.html">Identificazione e anagrafica</a>
+    <a href="sostenibilita.html">Sostenibilità e impatto ambientale</a>
+    <a href="circolarita.html">Circolarità e fine vita</a>
+    <a href="governance.html">Governance e standard</a>
+  </nav>
+</header>
+
+<main class="container">
+  <section id="identificazione" class="section">
+    <h2>Identificazione e anagrafica</h2>
+
+    <div class="subsection">
+      <h3>Codici univoci</h3>
+      <div class="card-grid">
+        <div class="info-card">
+          <h4>GTIN</h4>
+          <p class="value">08059XXXXXXXX <span class="badge badge-stima">Stima</span></p>
+        </div>
+        <div class="info-card">
+          <h4>Numero di serie</h4>
+          <p class="value">TTC-2024-000427 <span class="badge badge-stima">Stima</span></p>
+        </div>
+        <div class="info-card">
+          <h4>Numero di lotto</h4>
+          <p class="value">LOT-2024-11 <span class="badge badge-stima">Stima</span></p>
+        </div>
+        <div class="info-card">
+          <h4>Modello</h4>
+          <p class="value">T-Tronik C-Type</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Scheda tecnica</h3>
+      <div class="specs-grid">
+        <div class="spec-item">
+          <span class="spec-label">Tipologia</span>
+          <span class="spec-value">E-bike urbana a pedalata assistita (25 km/h)</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Telaio</span>
+          <span class="spec-value">Alluminio PG 6061, geometria step-through, taglie 43/47</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Ruote</span>
+          <span class="spec-value">28" — ETRTO 622, cerchi e-bike a 32 fori</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Livelli assistenza</span>
+          <span class="spec-value">3 livelli, fino a 25 km/h</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Peso</span>
+          <span class="spec-value">~27 kg <span class="badge badge-stima">Stima</span></span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Autonomia</span>
+          <span class="spec-value">Fino a 95 km</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Colori</span>
+          <span class="spec-value">Bronzo Cangiante / Blu Pietra</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="collapsible-section">
+        <button class="collapsible-header" onclick="toggleCollapsible(this)">
+          <span class="collapsible-title">
+            <h3 style="margin: 0; font-size: 1rem;">Distinta base (BOM) — componenti e fornitori</h3>
+          </span>
+          <span class="collapsible-arrow">▼</span>
+        </button>
+        <div class="collapsible-content">
+          <div class="bom-list">
+        <div class="bom-item">
+          <div class="bom-header">
+            <h4>Motore</h4>
+            <span class="bom-supplier">Shimano</span>
+          </div>
+          <p class="bom-model"><strong>Modello:</strong> Shimano STEPS E6100 (DU-E6100), 250 W, 60 Nm, motore centrale</p>
+          <p class="bom-material"><strong>Materiale:</strong> carter in alluminio + magnesio, avvolgimenti in rame, magneti permanenti</p>
+        </div>
+
+        <div class="bom-item">
+          <div class="bom-header">
+            <h4>Batteria</h4>
+            <span class="bom-supplier">Phylion</span>
+          </div>
+          <p class="bom-model"><strong>Modello:</strong> Phylion BN21, 36 V, 417 Wh, integrata nel tubo obliquo, sgancio rapido <span class="badge badge-reale">Reale</span></p>
+          <p class="bom-material"><strong>Celle:</strong> Li-ion (chimica manganese/NMC — da confermare col fornitore) <span class="badge badge-stima">Stima</span></p>
+        </div>
+
+        <div class="bom-item">
+          <div class="bom-header">
+            <h4>Display / cablaggio</h4>
+            <span class="bom-supplier">Shimano</span>
+          </div>
+          <p class="bom-model"><strong>Modello:</strong> Shimano SC-E6100 (display) + comando SW-E6000 + cablaggio E-TUBE</p>
+          <p class="bom-material"><strong>Materiale:</strong> involucro plastica ABS/policarbonato, cavi in rame schermato</p>
+        </div>
+
+        <div class="bom-item">
+          <div class="bom-header">
+            <h4>Comandi cambio</h4>
+            <span class="bom-supplier">SRAM</span>
+          </div>
+          <p class="bom-model"><strong>Modello:</strong> SRAM X5, 9v (leva destra)</p>
+          <p class="bom-material"><strong>Materiale:</strong> corpo in tecnopolimero + alluminio, minuteria acciaio</p>
+        </div>
+
+        <div class="bom-item">
+          <div class="bom-header">
+            <h4>Cambio (deragliatore post.)</h4>
+            <span class="bom-supplier">SRAM</span>
+          </div>
+          <p class="bom-model"><strong>Modello:</strong> SRAM X7, 9v, max 36T</p>
+          <p class="bom-material"><strong>Materiale:</strong> gabbia alluminio, molle e viti acciaio</p>
+        </div>
+
+        <div class="bom-item">
+          <div class="bom-header">
+            <h4>Guarnitura + pedivelle</h4>
+            <span class="bom-supplier">Shimano / FSA</span>
+          </div>
+          <p class="bom-model"><strong>Modello:</strong> corona Shimano SM-CRE61 38T + pedivelle FSA SMN E-Bike Forged, 170 mm. Movimento centrale incluso nel motore</p>
+          <p class="bom-material"><strong>Materiale:</strong> alluminio forgiato, corona in acciaio/alluminio</p>
+        </div>
+
+        <div class="bom-item">
+          <div class="bom-header">
+            <h4>Catena</h4>
+            <span class="bom-supplier">KMC</span>
+          </div>
+          <p class="bom-model"><strong>Modello:</strong> KMC e9S (specifica e-bike, 9v)</p>
+          <p class="bom-material"><strong>Materiale:</strong> acciaio con trattamento antiusura/anticorrosione (tipicamente nichelato)</p>
+        </div>
+
+        <div class="bom-item">
+          <div class="bom-header">
+            <h4>Freni</h4>
+            <span class="bom-supplier">Promax</span>
+          </div>
+          <p class="bom-model"><strong>Modello:</strong> Promax DSK-925, meccanici a disco; dischi 160 mm (blocco centrale / center-lock)</p>
+          <p class="bom-material"><strong>Materiale:</strong> pinza alluminio, dischi acciaio inox</p>
+        </div>
+
+        <div class="bom-item">
+          <div class="bom-header">
+            <h4>Forcella</h4>
+            <span class="bom-supplier">SR Suntour</span>
+          </div>
+          <p class="bom-model"><strong>Modello:</strong> SR Suntour NEX-E25 DS 700C, escursione 63 mm, steli 30 mm</p>
+          <p class="bom-material"><strong>Materiale:</strong> steli acciaio cromato, foderi alluminio, molla</p>
+        </div>
+
+        <div class="bom-item">
+          <div class="bom-header">
+            <h4>Pneumatici</h4>
+            <span class="bom-supplier">Chaoyang (ZC-Rubber)</span>
+          </div>
+          <p class="bom-model"><strong>Modello:</strong> Chaoyang E-Liner City 700x45C, 60 TPI (con banda riflettente)</p>
+          <p class="bom-material"><strong>Materiale:</strong> mescola di gomma + carcassa tessile, tallone in acciaio/aramide</p>
+        </div>
+
+        <div class="bom-item">
+          <div class="bom-header">
+            <h4>Ruote</h4>
+            <span class="bom-supplier">Shimano</span>
+          </div>
+          <p class="bom-model"><strong>Modello:</strong> cerchi e-bike 650 TR 28″ (ETRTO 622), 32 fori, alluminio. Mozzo posteriore Shimano FH-TX505, anteriore Shimano HB-TX505</p>
+          <p class="bom-material"><strong>Materiale:</strong> cerchi e mozzi alluminio, raggi acciaio inox</p>
+        </div>
+
+        <div class="bom-item">
+          <div class="bom-header">
+            <h4>Serie sterzo (headset)</h4>
+            <span class="bom-supplier">FSA</span>
+          </div>
+          <p class="bom-model"><strong>Modello:</strong> FSA HST STbk 1-1/8″ 44H-N10P</p>
+          <p class="bom-material"><strong>Materiale:</strong> cuscinetti acciaio, coppe alluminio</p>
+        </div>
+
+        <div class="bom-item">
+          <div class="bom-header">
+            <h4>Manubrio (piega)</h4>
+            <span class="bom-supplier">Velomann</span>
+          </div>
+          <p class="bom-model"><strong>Modello:</strong> Velomann 31,8 / 680 mm, alt. 20 mm</p>
+          <p class="bom-material"><strong>Materiale:</strong> alluminio</p>
+        </div>
+
+        <div class="bom-item">
+          <div class="bom-header">
+            <h4>Attacco manubrio (stem)</h4>
+            <span class="bom-supplier">Velomann</span>
+          </div>
+          <p class="bom-model"><strong>Modello:</strong> Velomann, morsetto 31,8 mm</p>
+          <p class="bom-material"><strong>Materiale:</strong> alluminio</p>
+        </div>
+
+        <div class="bom-item">
+          <div class="bom-header">
+            <h4>Manopole</h4>
+            <span class="bom-supplier">Herrmans</span>
+          </div>
+          <p class="bom-model"><strong>Modello:</strong> Herrmans GRIPset Oxy</p>
+          <p class="bom-material"><strong>Materiale:</strong> gomma/elastomero</p>
+        </div>
+
+        <div class="bom-item">
+          <div class="bom-header">
+            <h4>Reggisella</h4>
+            <span class="bom-supplier">Velomann</span>
+          </div>
+          <p class="bom-model"><strong>Modello:</strong> Velomann, Ø 31,6 mm, lungh. 350/400 mm</p>
+          <p class="bom-material"><strong>Materiale:</strong> alluminio</p>
+        </div>
+
+        <div class="bom-item">
+          <div class="bom-header">
+            <h4>Sella</h4>
+            <span class="bom-supplier">Selle Royal <span class="badge badge-reale">Reale</span></span>
+          </div>
+          <p class="bom-model"><strong>Modello:</strong> Selle Royal (city/comfort, imbottitura Royalgel™) <span class="badge badge-stima">Stima</span></p>
+          <p class="bom-material"><strong>Materiale:</strong> telaio acciaio, imbottitura gel/schiuma, copertura eco-pelle</p>
+        </div>
+
+        <div class="bom-item">
+          <div class="bom-header">
+            <h4>Pedali</h4>
+            <span class="bom-supplier">VP Components</span>
+          </div>
+          <p class="bom-model"><strong>Modello:</strong> VP Components, alluminio nero, asse 7 mm, 113,5×110,5 mm</p>
+          <p class="bom-material"><strong>Materiale:</strong> corpo alluminio, asse acciaio</p>
+        </div>
+
+        <div class="bom-item">
+          <div class="bom-header">
+            <h4>Parafanghi</h4>
+            <span class="bom-supplier">SKS</span>
+          </div>
+          <p class="bom-model"><strong>Modello:</strong> SKS PET Mudguards A60 S / 28″</p>
+          <p class="bom-material"><strong>Materiale:</strong> PET (plastica riciclabile) su staffe alluminio/acciaio</p>
+        </div>
+
+        <div class="bom-item">
+          <div class="bom-header">
+            <h4>Luce anteriore</h4>
+            <span class="bom-supplier">Herrmans</span>
+          </div>
+          <p class="bom-model"><strong>Modello:</strong> Herrmans Mr GO e-bike 6/12 V (100 lumen, da batteria)</p>
+          <p class="bom-material"><strong>Materiale:</strong> corpo plastica/alluminio, LED</p>
+        </div>
+
+        <div class="bom-item">
+          <div class="bom-header">
+            <h4>Luce posteriore</h4>
+            <span class="bom-supplier">Axa</span>
+          </div>
+          <p class="bom-model"><strong>Modello:</strong> Axa Juno e-bike 6/12 V</p>
+          <p class="bom-material"><strong>Materiale:</strong> plastica ABS, LED</p>
+        </div>
+
+        <div class="bom-item">
+          <div class="bom-header">
+            <h4>Cavalletto</h4>
+            <span class="bom-supplier">Ursus</span>
+          </div>
+          <p class="bom-model"><strong>Modello:</strong> Ursus, carico max 35 kg</p>
+          <p class="bom-material"><strong>Materiale:</strong> alluminio</p>
+        </div>
+
+        <div class="bom-item">
+          <div class="bom-header">
+            <h4>Portapacchi posteriore</h4>
+            <span class="bom-supplier">Racktime</span>
+          </div>
+          <p class="bom-model"><strong>Modello:</strong> Racktime, 28″, carico max 25 kg</p>
+          <p class="bom-material"><strong>Materiale:</strong> alluminio</p>
+        </div>
+
+        <div class="bom-item">
+          <div class="bom-header">
+            <h4>Paracatena (copricatena)</h4>
+            <span class="bom-supplier">Bianchi <span class="badge badge-stima">Stima</span></span>
+          </div>
+          <p class="bom-model"><strong>Modello:</strong> presente (protegge gli abiti)</p>
+          <p class="bom-material"><strong>Materiale:</strong> plastica, da distinta Bianchi</p>
+        </div>
+
+        <div class="bom-item">
+          <div class="bom-header">
+            <h4>Minuteria/ferramenta</h4>
+            <span class="bom-supplier">Bianchi <span class="badge badge-stima">Stima</span></span>
+          </div>
+          <p class="bom-model"><strong>Modello:</strong> bulloneria ISO/DIN in acciaio inox/zincato, da distinta Bianchi</p>
+          <p class="bom-material"><strong>Materiale:</strong> acciaio inox / acciaio zincato</p>
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Dati di fabbricazione</h3>
+      <div class="specs-grid">
+        <div class="spec-item">
+          <span class="spec-label">Produttore</span>
+          <span class="spec-value">F.I.V. Edoardo Bianchi S.p.A. — Treviglio (BG), Italia</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Stabilimento</span>
+          <span class="spec-value">Da specificare per lotto <span class="badge badge-stima">Stima</span></span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Data di produzione</span>
+          <span class="spec-value">Novembre 2024 (esempio) <span class="badge badge-stima">Stima</span></span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Anno modello</span>
+          <span class="spec-value">2024</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next Page Navigation -->
+  <div class="page-navigation">
+    <a href="home.html" class="prev-page-button">
+      <span class="prev-arrow">←</span>
+      <span class="prev-text">Indietro</span>
+    </a>
+    <a href="sostenibilita.html" class="next-page-button">
+      <span class="next-arrow">→</span>
+      <span class="next-text">Avanti</span>
+    </a>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-content">
+    <p><strong>Digital Product Passport</strong> — Bianchi T-Tronik C-Type</p>
+    <p style="font-size: 0.85rem; margin-top: 0.5rem;">Powered by <strong>quindi.ai</strong> | Conforme a ESPR (UE) 2024/1781, GS1 Digital Link, PEF/LCA</p>
+  </div>
+</footer>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const menuItems = document.getElementById('menu-items');
+  const menuLinks = document.querySelectorAll('.menu-items a');
+
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    menuItems.classList.toggle('menu-open');
+  });
+
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.classList.remove('active');
+      menuItems.classList.remove('menu-open');
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.header') && menuItems.classList.contains('menu-open')) {
+      menuToggle.classList.remove('active');
+      menuItems.classList.remove('menu-open');
+    }
+  });
+
+  function toggleCollapsible(button) {
+    button.classList.toggle('active');
+    const content = button.nextElementSibling;
+    content.classList.toggle('active');
+  }
+</script>
+
+</body>
+</html>

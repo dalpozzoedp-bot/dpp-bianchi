@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digital Product Passport — Bianchi T-Tronik C-Type Donna</title>
+  <title>Digital Product Passport — Bianchi T-Tronik C-Type</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="assets/quindi-mark.png" type="image/png">
 </head>
@@ -14,10 +14,25 @@
   <div class="header-container">
     <img src="assets/quindi-logo-white.png" alt="quindi" class="logo">
     <div class="header-text">
-      <h1>Bianchi T-Tronik C-Type Donna</h1>
+      <h1>Bianchi T-Tronik C-Type</h1>
       <p class="tagline">Digital Product Passport</p>
     </div>
+    <!-- Hamburger Menu Button -->
+    <button class="menu-hamburger" id="menu-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
+
+  <!-- Mobile Menu -->
+  <nav class="menu-items" id="menu-items">
+    <a href="#identificazione">Identificazione e anagrafica</a>
+    <a href="#sostenibilita">Sostenibilità e impatto ambientale</a>
+    <a href="#circolarita">Circolarità e fine vita</a>
+    <a href="#governance">Governance e standard</a>
+    <a href="#final-notes">Come leggere</a>
+  </nav>
 </header>
 
 <main class="container">
@@ -43,7 +58,7 @@
         </div>
         <div class="info-card">
           <h4>Modello</h4>
-          <p class="value">T-Tronik C-Type Donna</p>
+          <p class="value">T-Tronik C-Type</p>
         </div>
       </div>
     </div>
@@ -747,10 +762,39 @@
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-content">
-    <p><strong>Digital Product Passport</strong> — Bianchi T-Tronik C-Type Donna</p>
+    <p><strong>Digital Product Passport</strong> — Bianchi T-Tronik C-Type</p>
     <p style="font-size: 0.85rem; margin-top: 0.5rem;">Powered by <strong>quindi.ai</strong> | Conforme a ESPR (UE) 2024/1781, GS1 Digital Link, PEF/LCA</p>
   </div>
 </footer>
+
+<!-- Menu Toggle Script -->
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const menuItems = document.getElementById('menu-items');
+  const menuLinks = document.querySelectorAll('.menu-items a');
+
+  // Toggle menu quando clicchi l'hamburger
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    menuItems.classList.toggle('menu-open');
+  });
+
+  // Chiudi menu quando clicchi su un link
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.classList.remove('active');
+      menuItems.classList.remove('menu-open');
+    });
+  });
+
+  // Chiudi menu quando clicchi fuori dal menu
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.header') && menuItems.classList.contains('menu-open')) {
+      menuToggle.classList.remove('active');
+      menuItems.classList.remove('menu-open');
+    }
+  });
+</script>
 
 </body>
 </html>
