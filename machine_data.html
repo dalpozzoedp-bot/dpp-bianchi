@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Governance e standard — Digital Product Passport</title>
+  <title>Machine Data — Digital Product Passport</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="assets/quindi-mark.png" type="image/png">
 </head>
@@ -36,44 +36,26 @@
 </header>
 
 <main class="container">
-  <!-- GOVERNANCE E NOTE -->
-  <section id="governance" class="section">
-    <h2>Governance e standard</h2>
+  <section class="section">
+    <h2>Machine Data</h2>
 
-    <div class="governance-items">
-      <div class="governance-item">
-        <h4>Quadro normativo</h4>
-        <p>Regolamento ESPR (UE) 2024/1781 per il DPP; Regolamento Batterie (UE) 2023/1542 per il Battery Passport.</p>
-      </div>
-      <div class="governance-item">
-        <h4>Standard operativi</h4>
-        <p>GS1 — GTIN e GS1 Digital Link per identificazione e vettore dati (QR). Rif.: <a href="https://gs1it.org/migliorare-processi/supply-chain-sostenibile/passaporto-digitale-prodotto/" target="_blank">gs1it.org/passaporto-digitale</a></p>
-      </div>
-      <div class="governance-item">
-        <h4>Metodologia ambientale</h4>
-        <p>PEF / LCA (ISO 14040/44, ISO 14067) per il carbon footprint.</p>
-      </div>
-      <div class="governance-item">
-        <h4>Accesso differenziato</h4>
-        <p>Pubblico, autorità, operatori di fine vita — con permessi di lettura diversi sugli stessi dati.</p>
-      </div>
+    <div class="subsection">
+      <p style="text-align: center; color: var(--color-text-secondary); font-size: 1.1rem; margin-top: 3rem; margin-bottom: 3rem;">
+        <strong>Contenuto da definire</strong>
+      </p>
     </div>
 
-    <div class="value-proposition">
-      <h3>Valore per Bianchi</h3>
-      <p>Con un solo QR sul telaio, Bianchi copre due obblighi normativi (Battery Passport 2027 + ESPR 2029-30) e trasforma un adempimento in trasparenza verso il cliente. quindi.ai è il motore che genera i dati affidabili del passaporto: raccoglie dalla fabbrica materiali, distinta base, consumi e impronta di carbonio, e li integra con l'ERP per alimentare il DPP in tempo reale.</p>
-    </div>
   </section>
 
   <!-- Next Page Navigation -->
   <div class="page-navigation">
-    <a href="machine_data.html" class="prev-page-button">
+    <a href="circolarita.html" class="prev-page-button">
       <span class="prev-arrow">←</span>
       <span class="prev-text">Indietro</span>
     </a>
-    <a href="index.html" class="next-page-button">
+    <a href="governance.html" class="next-page-button">
       <span class="next-arrow">→</span>
-      <span class="next-text">Home Page</span>
+      <span class="next-text">Avanti</span>
     </a>
   </div>
 </main>
@@ -109,6 +91,12 @@
       menuItems.classList.remove('menu-open');
     }
   });
+
+  function toggleCollapsible(button) {
+    button.classList.toggle('active');
+    const content = button.nextElementSibling;
+    content.classList.toggle('active');
+  }
 </script>
 
 </body>
