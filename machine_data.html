@@ -6,6 +6,123 @@
   <title>Machine Data — Digital Product Passport</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="assets/quindi-mark.png" type="image/png">
+  <style>
+    .data-controls {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .search-box {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      font-size: 1rem;
+      font-family: var(--font);
+    }
+
+    .search-box input:focus {
+      outline: none;
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgba(11, 206, 136, 0.1);
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+
+    thead {
+      background-color: var(--color-primary-tint);
+      sticky: top 0;
+    }
+
+    th {
+      padding: 1rem;
+      text-align: left;
+      font-weight: 700;
+      color: var(--color-primary-dark);
+      border-bottom: 2px solid var(--color-primary);
+      white-space: nowrap;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.2s ease;
+    }
+
+    th:hover {
+      background-color: var(--color-primary);
+      color: white;
+    }
+
+    th.sortable::after {
+      content: " ⇅";
+      font-size: 0.8rem;
+      opacity: 0.5;
+    }
+
+    th.sort-asc::after {
+      content: " ↑";
+      opacity: 1;
+    }
+
+    th.sort-desc::after {
+      content: " ↓";
+      opacity: 1;
+    }
+
+    td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--color-border);
+      color: var(--color-text-main);
+    }
+
+    tbody tr {
+      transition: background-color 0.2s ease;
+    }
+
+    tbody tr:hover {
+      background-color: var(--color-primary-tint);
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: var(--color-bg-alt);
+    }
+
+    tbody tr.hidden {
+      display: none;
+    }
+
+    .table-info {
+      margin-top: 1rem;
+      padding: 0.75rem;
+      background-color: var(--color-bg-alt);
+      border-radius: 6px;
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      text-align: center;
+    }
+
+    .no-results {
+      padding: 2rem;
+      text-align: center;
+      color: var(--color-text-secondary);
+    }
+  </style>
 </head>
 <body>
 
@@ -40,9 +157,36 @@
     <h2>Machine Data</h2>
 
     <div class="subsection">
-      <p style="text-align: center; color: var(--color-text-secondary); font-size: 1.1rem; margin-top: 3rem; margin-bottom: 3rem;">
-        <strong>Contenuto da definire</strong>
+      <p style="margin-bottom: 1.5rem; color: var(--color-text-secondary);">
+        <strong>Dati SCADA di lavorazione</strong> — Tabella con log di produzione, tempi di lavoro e parametri operativi. Usa il campo di ricerca per filtrare i dati.
       </p>
+
+      <!-- Controlli di ricerca -->
+      <div class="data-controls">
+        <div class="search-box">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 Cerca per sk_id, wo_code, operatore, ecc..."
+          >
+        </div>
+      </div>
+
+      <!-- Tabella con scroll orizzontale -->
+      <div class="table-wrapper">
+        <table id="dataTable">
+          <thead id="tableHead">
+            <!-- Populates dynamically -->
+          </thead>
+          <tbody id="tableBody">
+            <!-- Populates dynamically -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-info">
+        <span id="rowCount">Caricamento dati...</span>
+      </div>
     </div>
 
   </section>
@@ -69,6 +213,7 @@
 </footer>
 
 <script>
+  // Menu Toggle
   const menuToggle = document.getElementById('menu-toggle');
   const menuItems = document.getElementById('menu-items');
   const menuLinks = document.querySelectorAll('.menu-items a');
@@ -92,11 +237,105 @@
     }
   });
 
-  function toggleCollapsible(button) {
-    button.classList.toggle('active');
-    const content = button.nextElementSibling;
-    content.classList.toggle('active');
+  // Dati SCADA
+  const scadaData = [
+    {"sk_id":"1993500","wo_header":"502314","wo_code":"0001680807_310","sk_mode":"M","sk_type":"WORKING","op_open_fullname":"Operatore Kitting","sk_working_time":"229","sk_goods":"0","ar_name":"WBB2000533974U","sk_batch":"0001680807-001","sk_start":"2026-07-14 09:25:12","sk_finish":"2026-07-14 09:29:01","sk_status":"3","sk_speed":"0"},
+    {"sk_id":"1993584","wo_header":"502314","wo_code":"0001680807_310","sk_mode":"M","sk_type":"WORKING","op_open_fullname":"Operatore Kitting","sk_working_time":"369","sk_goods":"0","ar_name":"WBB2000533974U","sk_batch":"0001680807-001","sk_start":"2026-07-14 09:35:56","sk_finish":"2026-07-14 09:42:05","sk_status":"3","sk_speed":"0"},
+    {"sk_id":"1993620","wo_header":"502314","wo_code":"0001680807_310","sk_mode":"M","sk_type":"WORKING","op_open_fullname":"SCADA OCS","sk_working_time":"9","sk_goods":"1","ar_name":"WBB2000533974U","sk_batch":"0001680807-001","sk_start":"2026-07-14 09:46:09","sk_finish":"2026-07-14 09:46:18","sk_status":"3","sk_speed":"0"},
+    {"sk_id":"1993729","wo_header":"502314","wo_code":"0001680807_320","sk_mode":"M","sk_type":"WORKING","op_open_fullname":"M725621 Op.","sk_working_time":"387","sk_goods":"1","ar_name":"WBB2000533974U","sk_batch":"0001680807-001","sk_start":"2026-07-14 10:03:45","sk_finish":"2026-07-14 10:10:12","sk_status":"3","sk_speed":"0"},
+    {"sk_id":"1993970","wo_header":"502314","wo_code":"0001680807_330","sk_mode":"M","sk_type":"WORKING","op_open_fullname":"SCADA OCS","sk_working_time":"204","sk_goods":"0","ar_name":"WBB2000533974U","sk_batch":"0001680807-001","sk_start":"2026-07-14 10:42:26","sk_finish":"2026-07-14 10:45:50","sk_status":"3","sk_speed":"0"},
+    {"sk_id":"1994014","wo_header":"502314","wo_code":"0001680807_330","sk_mode":"M","sk_type":"WORKING","op_open_fullname":"SCADA OCS","sk_working_time":"241","sk_goods":"0","ar_name":"WBB2000533974U","sk_batch":"0001680807-001","sk_start":"2026-07-14 10:47:08","sk_finish":"2026-07-14 10:51:09","sk_status":"3","sk_speed":"0"},
+    {"sk_id":"1994053","wo_header":"502314","wo_code":"0001680807_330","sk_mode":"M","sk_type":"WORKING","op_open_fullname":"M756896 Op.","sk_working_time":"116","sk_goods":"0","ar_name":"WBB2000533974U","sk_batch":"0001680807-001","sk_start":"2026-07-14 10:51:16","sk_finish":"2026-07-14 10:53:12","sk_status":"3","sk_speed":"0"},
+    {"sk_id":"1994067","wo_header":"502314","wo_code":"0001680807_330","sk_mode":"M","sk_type":"WORKING","op_open_fullname":"SCADA OCS","sk_working_time":"170","sk_goods":"1","ar_name":"WBB2000533974U","sk_batch":"0001680807-001","sk_start":"2026-07-14 10:53:22","sk_finish":"2026-07-14 10:56:12","sk_status":"3","sk_speed":"0"},
+    {"sk_id":"1994302","wo_header":"502314","wo_code":"0001680807_340","sk_mode":"M","sk_type":"WORKING","op_open_fullname":"SCADA OCS","sk_working_time":"233","sk_goods":"0","ar_name":"WBB2000533974U","sk_batch":"0001680807-001","sk_start":"2026-07-14 11:23:23","sk_finish":"2026-07-14 11:27:16","sk_status":"3","sk_speed":"0"},
+    {"sk_id":"1994328","wo_header":"502314","wo_code":"0001680807_340","sk_mode":"M","sk_type":"WORKING","op_open_fullname":"M499000 Op.","sk_working_time":"267","sk_goods":"0","ar_name":"WBB2000533974U","sk_batch":"0001680807-001","sk_start":"2026-07-14 11:27:34","sk_finish":"2026-07-14 11:32:01","sk_status":"3","sk_speed":"0"},
+    {"sk_id":"1994358","wo_header":"502314","wo_code":"0001680807_340","sk_mode":"M","sk_type":"WORKING","op_open_fullname":"M162328 Op.","sk_working_time":"296","sk_goods":"0","ar_name":"WBB2000533974U","sk_batch":"0001680807-001","sk_start":"2026-07-14 11:32:10","sk_finish":"2026-07-14 11:37:06","sk_status":"3","sk_speed":"0"},
+    {"sk_id":"1994393","wo_header":"502314","wo_code":"0001680807_340","sk_mode":"M","sk_type":"WORKING","op_open_fullname":"SCADA OCS","sk_working_time":"146","sk_goods":"0","ar_name":"WBB2000533974U","sk_batch":"0001680807-001","sk_start":"2026-07-14 11:37:13","sk_finish":"2026-07-14 11:39:39","sk_status":"3","sk_speed":"0"},
+    {"sk_id":"1994432","wo_header":"502314","wo_code":"0001680807_340","sk_mode":"M","sk_type":"WORKING","op_open_fullname":"M607130 Op.","sk_working_time":"247","sk_goods":"1","ar_name":"WBB2000533974U","sk_batch":"0001680807-001","sk_start":"2026-07-14 11:41:44","sk_finish":"2026-07-14 11:45:51","sk_status":"3","sk_speed":"0"},
+    {"sk_id":"1994585","wo_header":"502314","wo_code":"0001680807_350","sk_mode":"M","sk_type":"WORKING","op_open_fullname":"SCADA OCS","sk_working_time":"18","sk_goods":"1","ar_name":"WBB2000533974U","sk_batch":"0001680807-001","sk_start":"2026-07-14 12:00:38","sk_finish":"2026-07-14 12:00:56","sk_status":"3","sk_speed":"0"}
+  ];
+
+  // Rimuovi colonne vuote
+  function getSignificantColumns(data) {
+    if (!data || data.length === 0) return [];
+
+    const columns = Object.keys(data[0]);
+    return columns.filter(col => {
+      return data.some(row => {
+        const val = row[col];
+        return val !== "" && val !== "0" && val !== "[]" && val !== null && val !== undefined;
+      });
+    });
   }
+
+  // Popola la tabella
+  function populateTable() {
+    const significantCols = getSignificantColumns(scadaData);
+    const tableHead = document.getElementById('tableHead');
+    const tableBody = document.getElementById('tableBody');
+    const rowCount = document.getElementById('rowCount');
+
+    // Header
+    const headerRow = document.createElement('tr');
+    significantCols.forEach(col => {
+      const th = document.createElement('th');
+      th.className = 'sortable';
+      th.textContent = col;
+      th.addEventListener('click', () => sortTable(col, significantCols));
+      headerRow.appendChild(th);
+    });
+    tableHead.appendChild(headerRow);
+
+    // Body
+    scadaData.forEach(row => {
+      const tr = document.createElement('tr');
+      significantCols.forEach(col => {
+        const td = document.createElement('td');
+        td.textContent = row[col] || '-';
+        tr.appendChild(td);
+      });
+      tableBody.appendChild(tr);
+    });
+
+    rowCount.textContent = `Totale: ${scadaData.length} righe | Colonne significative: ${significantCols.length}`;
+  }
+
+  // Ricerca
+  document.getElementById('searchInput').addEventListener('input', (e) => {
+    const query = e.target.value.toLowerCase();
+    const rows = document.querySelectorAll('#tableBody tr');
+    let visibleCount = 0;
+
+    rows.forEach(row => {
+      const text = row.textContent.toLowerCase();
+      if (text.includes(query)) {
+        row.classList.remove('hidden');
+        visibleCount++;
+      } else {
+        row.classList.add('hidden');
+      }
+    });
+
+    document.getElementById('rowCount').textContent = `Risultati: ${visibleCount} di ${scadaData.length} righe`;
+  });
+
+  // Ordinamento
+  function sortTable(column, cols) {
+    const tbody = document.getElementById('tableBody');
+    const rows = Array.from(tbody.querySelectorAll('tr:not(.hidden)'));
+    const colIndex = cols.indexOf(column);
+
+    rows.sort((a, b) => {
+      const aVal = a.children[colIndex].textContent;
+      const bVal = b.children[colIndex].textContent;
+      return isNaN(aVal) ? aVal.localeCompare(bVal) : parseFloat(aVal) - parseFloat(bVal);
+    });
+
+    rows.forEach(row => tbody.appendChild(row));
+  }
+
+  // Inizializza
+  populateTable();
 </script>
 
 </body>
